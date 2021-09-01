@@ -1,0 +1,46 @@
+body {
+  position: relative;
+  height: 3500px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(91, 206, 203, 0) 0%,
+    rgba(91, 206, 203, 0.838542) 0.01%,
+    rgba(91, 206, 203, 0.46) 7.26%,
+    rgba(91, 206, 203, 0) 100%
+  );
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(4px);
+}
+nav > ul {
+  float: right;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+nav > ul > li > a {
+  text-decoration: none;
+  color: #000;
+  margin: 20px;
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+}
+.logo {
+  height: 365px;
+  margin-left: 50px;
+}
+.syningartimar {
+  position: absolute;
+  height: 500px;
+  width: 100%;
+  padding-top: 10rem;
+  transform: rotate(-2deg);
+}
+.posters {
+  height: 220px;
+  padding-top: 60px;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
