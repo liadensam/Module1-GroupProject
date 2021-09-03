@@ -11,7 +11,22 @@ body {
   );
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   backdrop-filter: blur(4px);
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 }
+
+.nav-link {
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  border-bottom: 1px solid #000;
+}
+
 nav > ul {
   float: right;
   list-style: none;
@@ -29,6 +44,17 @@ nav > ul > li > a {
   height: 365px;
   margin-left: 50px;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "overlay";
+}
+.filma {
+  grid-area: overlay;
+}
+
 .syningartimar {
   position: absolute;
   height: 500px;
@@ -38,9 +64,237 @@ nav > ul > li > a {
 }
 .posters {
   height: 220px;
-  padding-top: 60px;
-  padding-left: 40px;
+  padding-top: 70px;
+  padding-left: 25px;
+  padding-right: 25px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  grid-area: overlay;
+}
+
+/* Frétta tab */
+
+.titill2 {
+  position: absolute;
+  width: 1923.37px;
+  height: 662.5px;
+  left: -44.17px;
+  top: 2386px;
+
+  transform: rotate(4.66deg);
+}
+
+.frettir {
+  position: absolute;
+  left: 145px;
+  top: 1363px;
+
+  font-family: "Oswald", sans-serif;
+  font-size: 4rem;
+  color: #000;
+}
+
+.frettainfo {
+  position: absolute;
+  width: 1292px;
+  height: 819px;
+  left: 200px;
+  top: 1537px;
+
+  border-style: solid;
+  border-width: 2rem;
+  border-color: white;
+  outline: 5px solid black;
+
+  background: #f78fb3;
+  box-shadow: #f1f1f1 1px 1px 20px;
+  border-radius: 0.2em;
+}
+
+.titill {
+  display: flex;
+  flex-direction: row;
+}
+
+.titill h2 {
+  font-size: 6rem;
+  margin-top: 190px;
+  margin-left: 100px;
+  font-family: "Kaisei HarunoUmi", serif;
+  color: #f1f1f1;
+  letter-spacing: 3px;
+}
+
+.greenknight {
+  height: 400px;
+  margin-left: 67px;
+  margin-top: 100px;
+  box-shadow: 1px 1px 20px #000;
+  border-radius: 0.3em;
+}
+
+.frettainfo p {
+  margin-top: 100px;
+  margin-left: 67px;
+  font-family: "Kaisei HarunoUmi", serif;
+  color: #f1f1f1;
+  font-size: 2em;
+}
+
+/* Væntanlegt */
+
+.vaentanlegt {
+  position: absolute;
+  left: 137px;
+  top: 2545px;
+
+  font-family: "Oswald", sans-serif;
+  font-size: 4rem;
+  color: #000;
+}
+
+.coming-container {
+  position: absolute;
+  width: 100%;
+  height: 450px;
+  padding-top: 40px;
+  left: -8.45px;
+  top: 2667px;
+
+  transform: rotate(3deg);
+}
+
+.filma2 {
+  grid-area: overlay;
+}
+
+.posters2 {
+  height: 220px;
+  padding-top: 70px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  grid-area: overlay;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #079992;
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+  height: 100px;
+
+  margin-top: auto;
+}
+
+.contact-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 3rem;
+  color: #f1f1f1;
+}
+
+.social-media {
+  position: absolute;
+  bottom: 70px;
+  right: 32px;
+}
+.social-media a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  text-decoration: none;
+  background: #079992;
+  color: #f1f1f1;
+  margin: 5px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.social-media a:hover {
+  background: #f1f1f1;
+  color: #079992;
+  box-shadow: none;
+}
+
+/* poster hover */
+
+.card {
+  background-image: url(../img/freeguy.jpeg);
+  background-size: cover;
+  border-radius: 0.2em;
+  overflow: hidden;
+
+  transition: transform 500ms;
+  grid-area: overlay;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-content {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% / 1));
+  transform: translateY(55%);
+  transition: transform 500ms;
+}
+
+.card:hover .card-content {
+  transform: translateY(0);
+}
+
+.card-title {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  text-transform: uppercase;
+  font-family: "oswald", sans-serif;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: calc(100% + var(--padding));
+  left: calc(var(--padding) * -1);
+  bottom: 0;
+  background: #079992;
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 500ms;
+}
+
+.card:hover .card-title::after {
+  transform: scaleX(1);
+}
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  background-color: #079992;
+  padding: 0.5em 1.25em;
+  border-radius: 0.25em;
+  margin: 15px;
+
+  transition: transform 300ms;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #000;
+  color: #079992;
+  transform: scale(1.1);
 }
