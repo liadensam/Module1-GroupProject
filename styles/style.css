@@ -1,7 +1,4 @@
 body {
-  position: relative;
-  height: 3500px;
-
   background: linear-gradient(
     180deg,
     rgba(91, 206, 203, 0) 0%,
@@ -10,37 +7,79 @@ body {
     rgba(91, 206, 203, 0) 100%
   ),
   url(../img/Palm.svg) center/cover no-repeat;
+  background-size: auto;
+  
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(4px);
   margin: 0;
 }
 
+h1{
+  font-weight: normal;
+  position: relative;
+  left: 137px;
+  font-family: "Oswald", sans-serif;
+  font-size: 4rem;
+  color: #000;
+}
+section{
+  padding-top: 10rem;
+}
+
 /* NAV bar */
-.nav-link {
-  border-bottom: 1px solid transparent;
-  transition: 0.2s;
+header{
+  position: sticky;
+  top: 0;
+  height: 7rem;
+  z-index: 1000;
 }
-
-.nav-link:hover {
-  border-bottom: 3px solid #f78fb3;
+.logo {
+  height: 15rem;
+  margin-left: 3rem;
 }
-
-nav > ul {
+nav ul {
   float: right;
   list-style: none;
   display: flex;
   flex-direction: row;
 }
-nav > ul > li > a {
+nav li {
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
+  margin: 20px;
+}
+nav li:hover {
+  border-bottom: 3px solid #f78fb3;
+}
+nav  ul  li  a {
   text-decoration: none;
   color: #000;
-  margin: 20px;
   font-family: "Oswald", sans-serif;
   font-size: 2rem;
 }
-.logo {
-  height: 250px;
-  margin-left: 50px;
+
+
+/* Sýningartímar */
+
+
+.syningartimar {
+position: relative;
+width: 100%;
+padding-top: 6rem;
+transform: rotate(-2deg);
 }
+.posters {
+height: 20rem;
+padding-top: 70px;
+padding-left: 25px;
+padding-right: 25px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+grid-area: overlay;
+}
+
 
 /* Grid inside the film svg */
 .grid {
@@ -52,66 +91,18 @@ nav > ul > li > a {
 .filma {
   grid-area: overlay;
 }
-/* Sýningartímar */
-
-.showtime{
-    position: absolute;
-    left: 137px;
-    font-family: "Oswald", sans-serif;
-    font-size: 4rem;
-    color: #000;
-}
-.showtimeSection{
-  padding-top: 10rem;
-}
-
-.syningartimar {
-  position: absolute;
-  height: 500px;
-  width: 100%;
-  padding-top: 6rem;
-  transform: rotate(-2deg);
-}
-.posters {
-  height: 220px;
-  padding-top: 70px;
-  padding-left: 25px;
-  padding-right: 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  grid-area: overlay;
-}
 
 /* Frétta tab */
-
-.titill2 {
-  position: absolute;
-  width: 1923.37px;
-  height: 662.5px;
-  left: -44.17px;
-  top: 2386px;
-
-  transform: rotate(4.66deg);
-}
-
-.frettir {
-  position: absolute;
-  left: 145px;
-  top: 1363px;
-
-  font-family: "Oswald", sans-serif;
-  font-size: 4rem;
-  color: #000;
+#frettir{
+  position: relative;
 }
 
 .frettainfo {
-  position: absolute;
+  position: relative;
   width: 1292px;
   height: 819px;
   left: 200px;
-  top: 1537px;
+  margin-top: 4rem;
 
   border-style: solid;
   border-width: 2rem;
@@ -156,9 +147,10 @@ nav > ul > li > a {
 /* Væntanlegt */
 
 .vaentanlegt {
-  position: absolute;
+  position: relative;
   left: 137px;
-  top: 2545px;
+
+  margin-top: 4rem;
 
   font-family: "Oswald", sans-serif;
   font-size: 4rem;
@@ -166,12 +158,11 @@ nav > ul > li > a {
 }
 
 .coming-container {
-  position: absolute;
   width: 100%;
   height: 450px;
   padding-top: 40px;
   left: -8.45px;
-  top: 2667px;
+  margin-top: 4rem;
 
   transform: rotate(3deg);
 }
@@ -195,11 +186,10 @@ nav > ul > li > a {
 /* Footer */
 
 .footer {
-  position: fixed;
   background-color: #079992;
   font-family: "Oswald", sans-serif;
   width: 100%;
-
+  margin-top: 20rem;
   bottom: 0;
 }
 
