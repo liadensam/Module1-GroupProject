@@ -1,16 +1,20 @@
-var movieName = document.getElementsByClassName("card").id;
-var data = fetch(`https://www.omdbapi.com/?s=batman&apikey=81939349`)
+var movieName = document.getElementById("moviePoster").className;
+var data = fetch(`https://www.omdbapi.com/?t=${movieName}&apikey=81939349`)
 .then(function (response) {
     return response.json();
 })
 .then(function (data) {
-    console.log(data)
-    var movieTitle = data.Search[0].Title
+    var mainContainer = document.getElementById("moviePoster");
+    var div = document.createElement("div");
+    div.innerHTML = "<img src=' "+ data.Poster + "'/>"
+
+    mainContainer.appendChild(div)
 })
 .catch(function (err) {
     console.log("error: " + err);
 });
 
+/* 
 console.log(data.movieTitle)
 
 function appendDataToHTML(data) {
@@ -58,4 +62,4 @@ function appendDataToHTML(data) {
       mainContainer.appendChild(card);
     }
   }
-  appendDataToHTML(data);
+  appendDataToHTML(data); */
