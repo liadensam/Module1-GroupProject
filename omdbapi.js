@@ -23,8 +23,8 @@ const main = async () => {
         <div class='card-content'>
             <h2 class='card-title'>${movie.data.Title}</h2>
             <p class='card-body'>
-                (actors) <br/>
-                (actors)
+                Salur 1 <br/>
+                kl 17:00
             </p>
             <a href='#' class='button'> Kaupa miða </a>
         </div>
