@@ -1,60 +1,85 @@
 body {
-	position: relative;
-	background: linear-gradient(
-			180deg,
-			rgba(91, 206, 203, 0) 0%,
-			rgba(91, 206, 203, 0.838542) 0.01%,
-			rgba(91, 206, 203, 0.46) 7.26%,
-			rgba(91, 206, 203, 0) 100%
-		),
-		url(../img/Palm.svg) center/cover no-repeat;
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	margin: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(91, 206, 203, 0) 0%,
+    rgba(91, 206, 203, 0.838542) 0.01%,
+    rgba(91, 206, 203, 0.46) 7.26%,
+    rgba(91, 206, 203, 0) 100%
+  ),
+  url(../img/Palm.svg) center/cover no-repeat;
+  background-size: auto;
+  
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(4px);
+  margin: 0;
+}
+
+h1{
+  font-weight: normal;
+  position: relative;
+  left: 137px;
+  font-family: "Oswald", sans-serif;
+  font-size: 4rem;
+  color: #000;
+}
+section{
+  padding-top: 10rem;
 }
 
 /* NAV bar */
-.header {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-
-	margin-bottom: 60px;
+header{
+  position: sticky;
+  top: 0;
+  height: 7rem;
+  z-index: 1000;
 }
-
-.burger {
-	padding: 20px;
-}
-.burger a {
-	text-decoration: none;
-	color: #000;
-	margin: 20px;
-	font-family: "Oswald", sans-serif;
-	font-size: 26px;
-}
-
-.nav-link:hover {
-	border-bottom: 3px solid #f78fb3;
-}
-
-.nav-link {
-	border-bottom: 1px solid transparent;
-	transition: 0.2s;
-}
-
 .logo {
-	height: 250px;
-	margin-left: 50px;
+  height: 15rem;
+  margin-left: 3rem;
+}
+nav ul {
+  float: right;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+nav li {
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
+  margin: 20px;
+}
+nav li:hover {
+  border-bottom: 3px solid #f78fb3;
+}
+nav  ul  li  a {
+  text-decoration: none;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
 }
 
-.main-content {
-	display: flex;
-	flex-direction: column;
-	row-gap: 60px;
 
-	min-height: 100vh;
-	width: 100%;
-	padding-bottom: 300px;
+/* Sýningartímar */
+
+
+.syningartimar {
+position: relative;
+width: 100%;
+padding-top: 6rem;
+transform: rotate(-2deg);
 }
+.posters {
+height: 20rem;
+padding-top: 70px;
+padding-left: 25px;
+padding-right: 25px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+grid-area: overlay;
+}
+
 
 /* Grid inside the film svg */
 .film-reel {
@@ -66,53 +91,18 @@ body {
 .filma {
 	grid-area: overlay;
 }
-/* Sýningartímar */
-
-.section-title {
-	font-family: "Oswald", sans-serif;
-	font-size: 40px;
-	font-weight: 500;
-	color: #000;
-	margin-left: 50px;
-}
-
-@media (min-width: 1080px) {
-	.section-title {
-		margin-left: 140px;
-	}
-}
-
-.showtime {
-	padding: 0 25px;
-	width: 100%;
-	transform: rotate(-2deg);
-}
-
-.posters {
-	height: 220px;
-	padding: 0 25px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-
-	grid-area: overlay;
-}
 
 /* Frétta tab */
-
-.titill2 {
-	transform: rotate(4.66deg);
-}
-.test {
-	display: flex;
-	justify-content: flex-end;
+#frettir{
+  position: relative;
 }
 
-.news {
-	border-style: solid;
-	border-width: 2rem;
-	border-color: white;
-	outline: 5px solid black;
+.frettainfo {
+  position: relative;
+  width: 1292px;
+  height: 819px;
+  left: 200px;
+  margin-top: 4rem;
 
 	background: #f78fb3;
 	border-radius: 0.2em;
@@ -154,15 +144,22 @@ body {
 /* Væntanlegt */
 
 .vaentanlegt {
-	font-family: "Oswald", sans-serif;
-	font-size: 4rem;
-	color: #000;
+  position: relative;
+  left: 137px;
+
+  margin-top: 4rem;
+
+  font-family: "Oswald", sans-serif;
+  font-size: 4rem;
+  color: #000;
 }
 
 .coming-container {
-	width: 100%;
-	height: 450px;
-	padding-top: 40px;
+  width: 100%;
+  height: 450px;
+  padding-top: 40px;
+  left: -8.45px;
+  margin-top: 4rem;
 
 	transform: rotate(3deg);
 }
@@ -186,13 +183,11 @@ body {
 /* Footer */
 
 .footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 200px;
-
-	background-color: #079992;
-	font-family: "Oswald", sans-serif;
+  background-color: #079992;
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+  margin-top: 20rem;
+  bottom: 0;
 }
 
 .contact {
@@ -208,25 +203,40 @@ body {
 }
 
 .contact-text {
-	font-family: "Oswald", sans-serif;
-	font-size: 26px;
-	color: #f1f1f1;
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  color: #f1f1f1;
+  padding-left: 20px;
+  padding-top: 10px;
 }
 
-.contact-info {
-	display: flex;
-	align-items: center;
-	column-gap: 15px;
-	color: #fff;
 
-	font-weight: 300;
-	font-size: 18px;
+.grid img{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-left: 30px;
+}
+
+.contact-icons{
+  grid-area: overlay;
+}
+
+.grid p{
+  grid-area: overlay;
+  padding-left: 80px;
+  padding-top: 7px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Oswald", sans-serif;
+  color: #f1f1f1;
+  font-size: 20px;
 }
 
 .social-media {
-	position: absolute;
-	bottom: 170px;
-	right: 32px;
+  position: absolute;
+  bottom: 190px;
+  right: 32px;
 }
 .social-media a {
 	display: inline-flex;
