@@ -12,7 +12,6 @@ Version 1.0.0
 - Landsbyggðin (Tryggvi Ólason, Úlfur Þór Böðvarsson, Þorbergur Haraldsson)
 
 ### General-info
---
 This is a website we did for the group project in Module 1. 
 At the start of this project we decided to start with a brainstorm to decide what kind of a website we wanted to make. 
 We decided on making a website for a made up cinema called Landsbyggðarbíó.
