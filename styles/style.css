@@ -240,12 +240,10 @@ body {
 /* poster hover */
 
 .card {
-	/* 	background-image: url(../img/freeguy.jpeg);
-	background-size: cover; */
-	border-radius: 0.2em;
 	overflow: hidden;
 
 	transition: transform 500ms;
+
 	grid-area: overlay;
 }
 
@@ -339,13 +337,28 @@ body {
 
 	max-height: 450px;
 	min-height: 350px;
+
+
 }
 .film__frame {
-	padding: 22% 5%;
+	padding: 18% 5%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+  
+  display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "overlay";
+
+
+
 }
 .film__frame img {
 	max-width: 100%;
+
+}
+
+.img-container{
+  grid-area: overlay;
 }
