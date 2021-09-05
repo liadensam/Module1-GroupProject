@@ -19,7 +19,7 @@ With the decided idea for this project we started collecting visual materials an
 --
 
 ### Technologies: 
-For the structure and design of this website we used HTML and CSS
+For the structure and design of this website we used HTML and CSS.
 All Designs were made in Fimga and Illustrator
 
 ### Licence
