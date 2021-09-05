@@ -252,15 +252,22 @@ body {
 }
 
 .card-content {
-	--padding: 1.5rem;
+	--padding: 0.5rem;
 	padding: var(--padding);
-	background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% / 1));
-	transform: translateY(55%);
+
+	transform: translateY(80%);
 	transition: transform 500ms;
+	font-family: "oswald", sans-serif;
+	color: #f1f1f1;
+	font-weight: bold;
 }
 
 .card:hover .card-content {
 	transform: translateY(0);
+	font-family: "oswald", sans-serif;
+	color: #f1f1f1;
+	padding-left: 10px;
+
 }
 
 .card-title {
@@ -269,18 +276,10 @@ body {
 	max-width: 100%;
 	text-transform: uppercase;
 	font-family: "oswald", sans-serif;
+	color: #f1f1f1;
 }
 
-.card-title::after {
-	content: "";
-	height: 4px;
-	bottom: 0;
-	background: #079992;
-	transform: scaleX(0);
-	transform-origin: left;
 
-	transition: transform 500ms;
-}
 
 .card:hover .card-title::after {
 	transform: scaleX(1);
@@ -290,18 +289,20 @@ body {
 	cursor: pointer;
 	display: inline-block;
 	text-decoration: none;
-	color: black;
+	color: #f1f1f1;
 	background-color: #079992;
 	padding: 0.5em 1.25em;
-	border-radius: 0.25em;
-	margin: 15px;
+	border-radius: 0.20em;
+	margin: 10px;
+	font-family: "oswald", sans-serif;
+	font-weight: bold;
 
 	transition: transform 300ms;
 }
 
 .button:hover,
 .button:focus {
-	background-color: #000;
+	background-color: #f1f1f1;
 	color: #079992;
 	transform: scale(1.1);
 }
@@ -355,10 +356,11 @@ body {
 
 }
 .film__frame img {
-	max-width: 100%;
+	max-width: 100%
 
 }
 
 .img-container{
   grid-area: overlay;
+  width: 100%;
 }
