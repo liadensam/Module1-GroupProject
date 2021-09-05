@@ -49,6 +49,7 @@ body {
 .main-content {
 	display: flex;
 	flex-direction: column;
+	row-gap: 60px;
 
 	min-height: 100vh;
 	width: 100%;
@@ -66,10 +67,6 @@ body {
 	grid-area: overlay;
 }
 /* Sýningartímar */
-
-.section {
-	margin-bottom: 60px;
-}
 
 .section-title {
 	font-family: "Oswald", sans-serif;
