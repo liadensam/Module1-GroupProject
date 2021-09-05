@@ -10,6 +10,8 @@ body {
 		url(../img/Palm.svg) center/cover no-repeat;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	margin: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 /* NAV bar */
@@ -46,6 +48,8 @@ body {
 	margin-left: 50px;
 }
 
+/* Main contenct section */
+
 .main-content {
 	display: flex;
 	flex-direction: column;
@@ -63,10 +67,8 @@ body {
 	grid-template-rows: 1fr;
 	grid-template-areas: "overlay";
 }
-.filma {
-	grid-area: overlay;
-}
-/* Sýningartímar */
+
+/* Showtime section */
 
 .section-title {
 	font-family: "Oswald", sans-serif;
@@ -83,7 +85,6 @@ body {
 }
 
 .showtime {
-	padding: 0 25px;
 	width: 100%;
 	transform: rotate(-2deg);
 }
@@ -98,14 +99,10 @@ body {
 	grid-area: overlay;
 }
 
-/* Frétta tab */
+/* News section */
 
-.titill2 {
-	transform: rotate(4.66deg);
-}
-.test {
-	display: flex;
-	justify-content: flex-end;
+.news-section {
+	overflow-x: auto;
 }
 
 .news {
@@ -124,6 +121,7 @@ body {
 	padding: 30px;
 	max-width: 1400px;
 	min-width: 815px;
+	margin: 10px 5px;
 }
 
 @media (min-width: 1080px) {
@@ -144,20 +142,14 @@ body {
 
 .news img {
 	float: right;
-	height: 250px;
+	max-height: 250px;
 
 	border-radius: 0.3em;
 	margin-left: 40px;
 	margin-bottom: 20px;
 }
 
-/* Væntanlegt */
-
-.vaentanlegt {
-	font-family: "Oswald", sans-serif;
-	font-size: 4rem;
-	color: #000;
-}
+/* Coming soon section */
 
 .coming-container {
 	width: 100%;
@@ -165,10 +157,6 @@ body {
 	padding-top: 40px;
 
 	transform: rotate(3deg);
-}
-
-.filma2 {
-	grid-area: overlay;
 }
 
 .posters2 {
@@ -252,8 +240,8 @@ body {
 /* poster hover */
 
 .card {
-	background-image: url(../img/freeguy.jpeg);
-	background-size: cover;
+	/* 	background-image: url(../img/freeguy.jpeg);
+	background-size: cover; */
 	border-radius: 0.2em;
 	overflow: hidden;
 
@@ -318,4 +306,46 @@ body {
 	background-color: #000;
 	color: #079992;
 	transform: scale(1.1);
+}
+
+/* Film reel */
+
+.strip {
+	display: flex;
+	overflow-x: auto;
+}
+.film {
+	aspect-ratio: 9 / 16;
+	background: #e66667;
+	background-image: linear-gradient(to right, #fff, #fff),
+		linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #fff),
+		linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #fff),
+		linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #fff),
+		linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #fff),
+		linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #fff),
+		linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #fff),
+		linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #fff),
+		linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #fff),
+		linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #fff),
+		linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #fff);
+	background-repeat: no-repeat;
+
+	background-position: 5% 5%, 15% 5%, 25% 5%, 35% 5%, 45% 5%, 55% 5%, 65% 5%,
+		75% 5%, 85% 5%, 95% 5%, 5% 95%, 15% 95%, 25% 95%, 35% 95%, 45% 95%, 55% 95%,
+		65% 95%, 75% 95%, 85% 95%, 95% 95%;
+
+	background-size: 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%,
+		7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%, 7% 4%;
+
+	max-height: 450px;
+	min-height: 350px;
+}
+.film__frame {
+	padding: 22% 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.film__frame img {
+	max-width: 100%;
 }
