@@ -9,8 +9,8 @@ Version 1.0.0
 * [Technologies](#technologies)
 
 ### Group: 
-- Landsbyggðin <br/>
-Tryggvi Ólason, Úlfur Þór Böðvarsson, Þorbergur Haraldsson
+Group name: Landsbyggðin <br/>
+Group members: Tryggvi Ólason, Úlfur Þór Böðvarsson, Þorbergur Haraldsson
 
 ### General-info
 - This is a website we did for the group project in Module 1. 
@@ -20,8 +20,8 @@ With the decided idea for this project we started collecting visual materials an
 --
 
 ### Technologies: 
-- For the structure and design of this website we used HTML and CSS.
-- All Designs were made in Fimga and Illustrator
+- For the structure and design of this website we used HTML, CSS and Javascript.
+- All Designs were made in Fimga and Illustrator.
 
 ### Licence
 None, this website is for fictional purposes only.
