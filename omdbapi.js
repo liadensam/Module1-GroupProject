@@ -1,65 +1,37 @@
-var movieName = document.getElementById("moviePoster").className;
-var data = fetch(`https://www.omdbapi.com/?t=${movieName}&apikey=81939349`)
-.then(function (response) {
-    return response.json();
-})
-.then(function (data) {
-    var mainContainer = document.getElementById("moviePoster");
-    var div = document.createElement("div");
-    div.innerHTML = "<img src=' "+ data.Poster + "'/>"
+// Wröppum þetta inní function svo það sé hægt að nota async/await
+const main = async () => {
+    // Sækjum öll elementin
+  const moviePosterElements = document.getElementsByClassName("moviePoster");
 
-    mainContainer.appendChild(div)
-})
-.catch(function (err) {
-    console.log("error: " + err);
-});
+  // Sækjum gögnin frá api og setjum þau inní object með elementinu
+  const movies = await Promise.all(
+    Array.from(moviePosterElements).map(async (posterElement) => ({
+      data: await fetch(
+        `https://www.omdbapi.com/?t=${posterElement.dataset.movie}&apikey=81939349`
+      ).then((response) => response.json()),
+      element: posterElement
+    }))
+  );
 
-/* 
-console.log(data.movieTitle)
+  // Loopum yfir öll objectin og setjum api gögnin inní elementið
+  movies.forEach((movie) => {
+    let div = document.createElement("div");
+    div.innerHTML = `<div class='img-container'>
+        <img src='${movie.data.Poster}' />
+    </div>
+    <div class='card'>
+        <div class='card-content'>
+            <h2 class='card-title'>${movie.data.Title}</h2>
+            <p class='card-body'>
+                (actors) <br/>
+                (actors)
+            </p>
+            <a href='#' class='button'> Kaupa miða </a>
+        </div>
+    </div>`;
 
-function appendDataToHTML(data) {
-  
-    var mainContainer = document.getElementById("jobListing");
-  
+    movie.element.appendChild(div);
+  });
+};
 
-    console.log(data.Search).length
-    // get count of json objs
-    var data_count = Object.keys(data.Search).length;
-  
-    // for each object, create card
-    for (var i = 0; i < data_count; i++) {
-      var job_title = data.jobs[i].title;
-      var job_location = data.jobs[i].location.name;
-      var job_link = data.jobs[i].absolute_url;
-      var description = data.jobs[i].content;
-      
-      // create appropriate HTML elements
-      var card = document.createElement("div");
-      var cardBody = document.createElement("div");
-      var cardTitle = document.createElement("div");
-      var cardSubtitle = document.createElement("div");
-      var cardCopy = document.createElement("div");
-      
-      // append classes to each element
-      card.classList.add("card");
-      cardBody.classList.add("card__body");
-      cardTitle.classList.add("card__title");
-      cardSubtitle.classList.add("card__subtitle");
-      cardCopy.classList.add("card__copy");
-  
-      // set the text content for each node
-      cardTitle.textContent = job_title;
-      cardSubtitle.textContent = job_location;
-      cardCopy.textContent = description;
-  
-      // append each element to where they belong
-      cardBody.appendChild(cardTitle);
-      cardBody.appendChild(cardSubtitle);
-      cardBody.appendChild(cardCopy);
-      card.appendChild(cardBody);
-  
-      // append final `card` element to `mainContainer`
-      mainContainer.appendChild(card);
-    }
-  }
-  appendDataToHTML(data); */
+main();
