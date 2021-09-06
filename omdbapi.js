@@ -1,5 +1,8 @@
 // Wröppum þetta inní function svo það sé hægt að nota async/await
 const main = async () => {
+	
+	// SHOWTIME
+
 	// Sækjum öll elementin
 	const moviePosterElements = document.getElementsByClassName("moviePoster");
 
@@ -34,6 +37,8 @@ const main = async () => {
 
 		movie.element.appendChild(div);
 	});
+
+	// COMING SOON
 
 	// Sækjum öll elementin
 	const comingPosterElements = document.getElementsByClassName("comingPoster");
